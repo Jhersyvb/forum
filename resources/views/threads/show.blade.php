@@ -25,7 +25,9 @@
         </div>
     </div>
 
-    @if (auth()->check())
+    @guest
+        <p class="text-center my-5">Please <a href="{{ route('login') }}">sign in</a> to participate in this discussion.</p>
+    @else
         <div class="row justify-content-center my-5">
             <div class="col-md-8">
                 <form method="POST" action="{{ $thread->path() }}/replies">
@@ -39,8 +41,6 @@
                 </form>
             </div>
         </div>
-    @else
-        <p class="text-center my-5">Please <a href="{{ route('login') }}">sign in</a> to participate in this discussion.</p>
-    @endif
+    @endguest
 </div>
 @endsection
