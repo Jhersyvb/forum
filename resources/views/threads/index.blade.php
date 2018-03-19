@@ -16,11 +16,17 @@
 
                     @foreach ($threads as $thread)
                         <article>
-                            <h4>
-                                <a href="{{ $thread->path() }}">
-                                    {{ $thread->title }}
+                            <div class="row">
+                                <h4 class="col">
+                                    <a href="{{ $thread->path() }}">
+                                        {{ $thread->title }}
+                                    </a>
+                                </h4>
+
+                                <a href="{{ $thread->path() }}" class="col-auto">
+                                    {{ $thread->replies_count }} {{ str_plural('reply', $thread->replies_count) }}
                                 </a>
-                            </h4>
+                            </div>
                             <div class="body">{{ $thread->body }}</div>
                         </article>
 
