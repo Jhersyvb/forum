@@ -6,8 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <a href="#">{{ $thread->creator->name }}</a> posted:
-                    {{ $thread->title }}
+                    <a href="{{ route('profile', $thread->creator->name) }}">
+                        {{ $thread->creator->name }}
+                    </a> posted: {{ $thread->title }}
                 </div>
 
                 <div class="card-body">
@@ -22,13 +23,17 @@
             {{ $replies->links() }}
 
             @guest
-                <p class="text-center my-5">Please <a href="{{ route('login') }}">sign in</a> to participate in this discussion.</p>
+                <p class="text-center my-5">
+                    Please <a href="{{ route('login') }}">sign in</a> to participate in this discussion.
+                </p>
             @else
                 <form method="POST" action="{{ $thread->path() }}/replies" class="my-5">
                     {{ csrf_field() }}
 
                     <div class="form-group">
-                        <textarea name="body" id="body" class="form-control" placeholder="Have something to say?" rows="5"></textarea>
+                        <textarea name="body" id="body" class="form-control"
+                                  placeholder="Have something to say?" rows="5">
+                        </textarea>
                     </div>
 
                     <button type="submit" class="btn btn-default">Post</button>
