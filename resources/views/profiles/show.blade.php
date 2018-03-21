@@ -14,8 +14,11 @@
                         <div class="card-header bg-transparent">
                             <div class="row">
                                 <span class="col">
-                                    <a href="#">{{ $thread->creator->name }}</a>
-                                    posted: {{ $thread->title }}
+                                    <a href="{{ route('profile', $thread->creator) }}">
+                                        {{ $thread->creator->name }}
+                                    </a> posted: <a href="{{ $thread->path() }}">
+                                        {{ $thread->title }}
+                                    </a>
                                 </span>
                                 <span class="col-auto">
                                     {{ $thread->created_at->diffForHumans() }}

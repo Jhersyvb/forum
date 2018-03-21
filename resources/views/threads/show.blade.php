@@ -13,7 +13,7 @@
                             </a> posted: {{ $thread->title }}
                         </div>
 
-                        @auth
+                        @can('update', $thread)
                             <div class="col-auto">
                                 <form action="{{ $thread->path() }}" method="POST">
                                     {{ csrf_field() }}
@@ -23,7 +23,7 @@
                                     <button type="submit" class="btn btn-link">Delete Thread</button>
                                 </form>
                             </div>
-                        @endauth
+                        @endcan
                     </div>
                 </div>
 
