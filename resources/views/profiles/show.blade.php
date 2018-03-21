@@ -2,18 +2,16 @@
 
 @section('content')
     <div class="container">
-        <div class="page-header">
-            <h1>
-                {{ $profileUser->name }}
-                <small>Since {{ $profileUser->created_at->diffForHumans() }}</small>
-            </h1>
-        </div>
-
         <div class="row justify-content-center">
-            <div class="col-12">
+            <div class="col-md-8">
+                <h1 class="border-bottom mb-5">
+                    {{ $profileUser->name }}
+                    <small>Since {{ $profileUser->created_at->diffForHumans() }}</small>
+                </h1>
+
                 @foreach ($threads as $thread)
-                    <div class="card my-3">
-                        <div class="card-header">
+                    <div class="card mb-3">
+                        <div class="card-header bg-transparent">
                             <div class="row">
                                 <span class="col">
                                     <a href="#">{{ $thread->creator->name }}</a>
