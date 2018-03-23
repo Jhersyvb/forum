@@ -22,6 +22,7 @@ window.flash = function (message) {
 };
 
 Vue.component('flash', require('./components/Flash.vue')); // <flash>
+Vue.component('reply', require('./components/Reply.vue')); // <flash>
 
 const app = new Vue({
     el: '#app'
