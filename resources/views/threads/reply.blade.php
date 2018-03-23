@@ -38,12 +38,9 @@
                     <div class="col-auto">
                         <button class="btn btn-sm" @click="editing = true">Edit</button>
                     </div>
-
-                    <form method="POST" action="/replies/{{ $reply->id }}" class="col-auto">
-                        {{ csrf_field() }} {{ method_field('DELETE') }}
-
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
+                    <div class="col-auto">
+                        <button class="btn btn-sm btn-danger" @click="destroy">Delete</button>
+                    </div>
                 </div>
             </div>
         @endcan
