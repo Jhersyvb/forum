@@ -4,8 +4,7 @@
             {{ config('app.name', 'Laravel') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -21,6 +20,7 @@
                             <a class="dropdown-item" href="/threads?by={{ auth()->user()->name }}">My Threads</a>
                         @endauth
                         <a class="dropdown-item" href="/threads?popular=1">Popular Threads</a>
+                        <a class="dropdown-item" href="/threads?unanswered=1">Unanswered Threads</a>
                     </div>
                 </li>
                 <li class="nav-item">
