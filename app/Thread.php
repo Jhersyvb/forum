@@ -3,7 +3,6 @@
 namespace App;
 
 use App\Events\ThreadHasNewReply;
-use App\Notifications\ThreadWasUpdated;
 use Illuminate\Database\Eloquent\Model;
 
 class Thread extends Model
